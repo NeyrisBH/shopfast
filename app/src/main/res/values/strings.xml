@@ -2,4 +2,12 @@
     <string name="app_name">ShopFast</string>
     <string name="navigation_drawer_open">Abrir menu lateral</string>
     <string name="navigation_drawer_close">Cerrar menu lateral</string>
+    <string name="welcome">Bienvenido a My Store App</string>
+    <string name="google_api_key">AIzaSyASgX4wAH6Yozb59eERXvAfOiw-YfA2EFU</string>
+    <string name="server_client_id">596272800399-qhb28blqupsfpisu7npfjljvqmnamh6l.apps.googleusercontent.com</string>
+    <string name="logo">Logo</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="google">Google</string>
 </resources>

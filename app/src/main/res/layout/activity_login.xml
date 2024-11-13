@@ -13,7 +13,7 @@
         android:layout_width="318dp"
         android:layout_height="146dp"
         android:layout_gravity="center"
-        android:contentDescription="Logo"
+        android:contentDescription="@string/logo"
         android:src="@drawable/logo_shopfast" />
 
     <Space
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="115dp"
         android:layout_gravity="center"
-        android:contentDescription="Logo"
+        android:contentDescription="@string/logo"
         android:src="@drawable/logo_name" />
 
     <LinearLayout
@@ -38,14 +38,16 @@
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Usuario"
+            android:autofillHints=""
+            android:hint="@string/usuario"
             android:inputType="text" />
 
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
+            android:autofillHints=""
+            android:hint="@string/contrasena"
             android:inputType="textPassword" />
 
         <Space
@@ -56,9 +58,26 @@
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Iniciar sesión"
+            android:text="@string/iniciar_sesion"
             android:backgroundTint="@color/primaryColor"
             android:textColor="@color/backgroundColor" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ó" />
+
+        <Button
+            android:id="@+id/btnGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/google" />
     </LinearLayout>
 
 </LinearLayout>

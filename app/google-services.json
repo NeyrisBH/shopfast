@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "12250783017",
+    "project_id": "shopfast-u",
+    "storage_bucket": "shopfast-u.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12250783017:android:bf6c337326eb2893e42b38",
+        "android_client_info": {
+          "package_name": "com.neyrisbh.shopfast"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLP70rym0LOHYQ4BgBZ-7tj1UpZOPb5YA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
