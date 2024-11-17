@@ -12,7 +12,12 @@
           "package_name": "com.neyrisbh.shopfast"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "12250783017-97pdkkqe4e7cf9ugf0v1a26dit4jq623.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCLP70rym0LOHYQ4BgBZ-7tj1UpZOPb5YA"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12250783017-97pdkkqe4e7cf9ugf0v1a26dit4jq623.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

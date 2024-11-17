@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.neyrisbh.shopfast">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,10 +16,13 @@
         android:theme="@style/Theme.Shopfast"
         tools:targetApi="31">
 
-        <!--
         <meta-data
-            android:name="com.google.android.gms.auth.api.signin.API_KEY"
-            android:value="@string/google_api_key" />-->
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/icon_logout" />
+
+        <meta-data
+            android:name="com.google.android.gms.auth.api.signin.CLIENT_ID"
+            android:value="@string/default_web_client_id" />
 
         <!-- Main Activity -->
         <activity
@@ -38,6 +44,11 @@
         <!-- Home Activity -->
         <activity
             android:name=".HomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".RegisterActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 

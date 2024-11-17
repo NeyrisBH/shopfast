@@ -6,78 +6,87 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:weightSum="1">
 
     <ImageView
         android:id="@+id/logoImageView"
-        android:layout_width="318dp"
-        android:layout_height="146dp"
+        android:layout_width="129dp"
+        android:layout_height="87dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
         android:contentDescription="@string/logo"
         android:src="@drawable/logo_shopfast" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="35dp" />
+        android:layout_height="16dp" />
 
     <ImageView
         android:id="@+id/logoImage2View"
-        android:layout_width="match_parent"
-        android:layout_height="115dp"
+        android:layout_width="wrap_content"
+        android:layout_height="164dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
         android:contentDescription="@string/logo"
         android:src="@drawable/logo_name" />
 
     <LinearLayout
-        android:layout_width="321dp"
-        android:layout_height="244dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:gravity="center"
-        android:orientation="vertical">
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp">
 
         <EditText
-            android:id="@+id/usernameEditText"
+            android:id="@+id/etUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
             android:hint="@string/usuario"
-            android:inputType="text" />
+            android:inputType="text"
+            android:importantForAccessibility="yes"
+            android:contentDescription="@string/usuario"/>
 
         <EditText
-            android:id="@+id/passwordEditText"
+            android:id="@+id/etPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
             android:hint="@string/contrasena"
-            android:inputType="textPassword" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="18dp" />
+            android:inputType="textPassword"
+            android:importantForAccessibility="yes"
+            android:contentDescription="@string/contrasena"
+            android:layout_marginTop="16dp"/>
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/iniciar_sesion"
             android:backgroundTint="@color/primaryColor"
-            android:textColor="@color/backgroundColor" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:text="@string/iniciar_sesion"
+            android:textColor="@color/backgroundColor"
+            android:layout_marginTop="24dp"/>
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="ó" />
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Crear cuenta"
+            android:textColor="@color/purple_500"/>
 
         <Button
             android:id="@+id/btnGoogle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/google" />
-    </LinearLayout>
+            android:text="Iniciar sesión con Google"
+            android:layout_below="@id/tvRegister"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"/>
 
+    </LinearLayout>
 </LinearLayout>
