@@ -13,4 +13,5 @@
     <string name="title_activity_login">Login</string>
     <string name="inicio">Inicio</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="api_google_geo">AIzaSyCM0fNa_YA_RwhBtevu2q59xidOzVir1ww</string>
 </resources>

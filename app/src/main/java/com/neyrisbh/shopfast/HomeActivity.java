@@ -2,13 +2,22 @@ package com.neyrisbh.shopfast;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.material.navigation.NavigationView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private DrawerLayout drawerLayout;
 
@@ -17,53 +26,63 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         drawerLayout = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        Toast.makeText(HomeActivity.this, "Inicio seleccionado", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_profile:
+                        Toast.makeText(HomeActivity.this, "Perfil seleccionado", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_logout:
+                        Toast.makeText(HomeActivity.this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        // NavigationView
-        NavigationView navigationView = findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.nav_home:
-                    displayWelcomeMessage();
-                    break;
-                case R.id.nav_logout:
-                    logout();
-                    break;
-
-            }
-            drawerLayout.closeDrawers();
-            return true;
-        });
-
-        // Inicio
-        displayWelcomeMessage();
-    }
-
-    private void displayWelcomeMessage() {
-        TextView welcomeText = findViewById(R.id.welcomeTextView);
-        if (welcomeText != null) {
-            welcomeText.setText("Bienvenido a My Store App");
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        } else {
+            Toast.makeText(this, "Error al cargar el mapa", Toast.LENGTH_SHORT).show();
         }
+
+        Button exploreButton = findViewById(R.id.btn_explore);
+        exploreButton.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, ProductsActivity.class);
+            startActivity(intent);
+        });
     }
 
-    private void logout() {
-        // Cierra la sesión y redirige al LoginActivity
-        // Aquí puedes limpiar la información de la sesión si es necesario
-        startActivity(new Intent(this, LoginActivity.class));
-        finish();
+    @Override
+    public void onMapReady(com.google.android.gms.maps.GoogleMap googleMap) {
+        com.google.android.gms.maps.model.LatLng storeLocation = new com.google.android.gms.maps.model.LatLng(3.4372, -76.5226);
+        googleMap.addMarker(new com.google.android.gms.maps.model.MarkerOptions().position(storeLocation).title("Tienda ShopFast"));
+        googleMap.moveCamera(com.google.android.gms.maps.CameraUpdateFactory.newLatLngZoom(storeLocation, 15));
     }
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(findViewById(R.id.navigation_view))) {
-            drawerLayout.closeDrawer(findViewById(R.id.navigation_view));
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }

@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gra"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/secondaryColor"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/secondaryColor" />
 
     <ImageView
         android:layout_width="264dp"
         android:layout_height="173dp"
         android:contentDescription="Logo"
-        android:src="@drawable/logo_shopfast" />
+        android:src="@drawable/logo_shopfast"
+        tools:ignore="HardcodedText" />
 
     <Space
         android:layout_width="match_parent"
@@ -22,5 +32,4 @@
         android:layout_width="match_parent"
         android:layout_height="66dp"
         app:srcCompat="@drawable/logo_name" />
-
 </LinearLayout>
