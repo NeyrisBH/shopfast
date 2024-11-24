@@ -1,15 +1,11 @@
 package com.neyrisbh.shopfast.models;
 
 public class Product {
-
     private String name;
     private double price;
-    private int imageResId;
 
-    public Product(String name, double price, int imageResId) {
         this.name = name;
         this.price = price;
-        this.imageResId = imageResId;
     }
 
     public String getName() {
@@ -20,7 +16,5 @@ public class Product {
         return price;
     }
 
-    public int getImageResId() {
-        return imageResId;
     }
 }
