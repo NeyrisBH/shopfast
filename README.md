@@ -4,6 +4,7 @@
 
 **ShopFast** es una aplicación móvil desarrollada en Java para dispositivos Android que permite a los usuarios explorar, gestionar y realizar compras simuladas en una tienda de tecnología. La aplicación está diseñada con interfaces gráficas intuitivas que incluyen pantallas para inicio de sesión, lista de productos, carrito de compras y registro de clientes. Además, utiliza una base de datos local SQLite para la gestión de datos de los productos.
 
+
 ## Características
 
 - **Interfaz de usuario funcional**: Pantallas diseñadas para login, listado de productos, carrito de compras y registro de clientes.
@@ -12,6 +13,7 @@
 - **Integración con Google Maps API**: Visualización de la ubicación física de la tienda.
 - **Inicio de sesión con Google**: Autenticación con la API de Gmail para una experiencia más segura.
 - **Compatibilidad nativa**: Desarrollada utilizando Android Studio para dispositivos Android.
+- 
 
 ## Requisitos Previos
 
@@ -21,6 +23,7 @@
   - Java Development Kit (JDK)
   - Google Play Services
   - Clave de API de Google Maps
+
 
 ## Instalación
 
@@ -75,6 +78,7 @@
   Menu Drawer                |    Register       
 :-------------------------:|:-------------------------:
 ![HomePage](screenshots/MenuDrawer.png) | ![DetailPage](screenshots/RegisterActivity.png)
+
 
 ## Estructura del Proyecto
 ```sh
