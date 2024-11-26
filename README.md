@@ -13,7 +13,7 @@
 - **Integración con Google Maps API**: Visualización de la ubicación física de la tienda.
 - **Inicio de sesión con Google**: Autenticación con la API de Gmail para una experiencia más segura.
 - **Compatibilidad nativa**: Desarrollada utilizando Android Studio para dispositivos Android.
-- 
+
 
 ## Requisitos Previos
 
