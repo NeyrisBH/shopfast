@@ -40,7 +40,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         Product product = productList.get(position);
         holder.productName.setText(product.getName());
         holder.productPrice.setText(String.format("$%.2f", product.getPrice()));
-        holder.productImage.setImageResource(product.getImageResId());
+        //holder.productImage.setImageResource(product.getImageResId());
 
         // Acción del botón de detalles
         holder.productDetailsButton.setOnClickListener(v -> {
