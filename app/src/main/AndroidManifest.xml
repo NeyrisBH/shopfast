@@ -52,8 +52,15 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <!-- Register Activity -->
         <activity
             android:name=".RegisterActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- Produucts Activity -->
+        <activity
+            android:name=".ProductsActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
